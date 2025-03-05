@@ -52,7 +52,7 @@
 
 Array.prototype.myLastIndexOf = function (item) {
   let result = -1;
-  for (let i = this[this.length]; i > 0; i--) {
+  for (let i = this.length - 1; i >= 0; i--) {
     if (this[i] === item) {
       result = i;
       break;
@@ -60,5 +60,5 @@ Array.prototype.myLastIndexOf = function (item) {
   }
   return result;
 };
-const array = [5, 6, 7, 8, 5, 9, 6, 10];
-console.log(array.myIndexOf(14));
+let testArray1 = [1, 2, 3, 4, 2, 5, 2];
+console.log(testArray1.myLastIndex(2));
