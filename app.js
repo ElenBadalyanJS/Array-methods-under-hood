@@ -61,4 +61,4 @@ Array.prototype.myLastIndexOf = function (item) {
   return result;
 };
 let testArray1 = [1, 2, 3, 4, 2, 5, 2];
-console.log(testArray1.myLastIndex(2));
+console.log(testArray1.myLastIndexOf(2));
