@@ -29,22 +29,22 @@
 // const array = [5, 6, 7, 8, 5, 9, 6, 10];
 // console.log(array.myIndexOf(14));
 
-Array.prototype.myMap = function (callback) {
-  let newArr = [];
-  for (let i = 0; i < this.length; i++) {
-    let mapedItem = callback(this[i], i, this);
-    newArr.push(mapedItem);
-  }
-  return newArr;
-};
-let array = [10, 20, 30];
-let array2 = array.myMap((el) => el * 10);
-
-// Array.prototype.myForEach = function (callback) {
+// Array.prototype.myMap = function (callback) {
+//   let newArr = [];
 //   for (let i = 0; i < this.length; i++) {
-//     callback(this[i], i, this);
+//     let mapedItem = callback(this[i], i, this);
+//     newArr.push(mapedItem);
 //   }
+//   return newArr;
 // };
 // let array = [10, 20, 30];
-// let sum = 0;
-// array.myForEach((el) => (sum = sum + el));
+// let array2 = array.myMap((el) => el * 10);
+
+Array.prototype.myForEach = function (callback) {
+  for (let i = 0; i < this.length; i++) {
+    callback(this[i], i, this);
+  }
+};
+let array = [10, 20, 30];
+let sum = 0;
+array.myForEach((el) => (sum = sum + el));
