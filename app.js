@@ -50,15 +50,26 @@
 // let sum = 0;
 // array.myForEach((el) => (sum = sum + el));
 
-Array.prototype.myLastIndexOf = function (item) {
-  let result = -1;
-  for (let i = this.length - 1; i >= 0; i--) {
-    if (this[i] === item) {
-      result = i;
-      break;
-    }
+// Array.prototype.myLastIndexOf = function (item) {
+//   let result = -1;
+//   for (let i = this.length - 1; i >= 0; i--) {
+//     if (this[i] === item) {
+//       result = i;
+//       break;
+//     }
+//   }
+//   return result;
+// };
+// let testArray1 = [1, 2, 3, 4, 2, 5, 2];
+// console.log(testArray1.myLastIndexOf(2));
+
+Array.prototype.myIncludes = function (item) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === item) return true;
   }
-  return result;
+  return false;
 };
-let testArray1 = [1, 2, 3, 4, 2, 5, 2];
-console.log(testArray1.myLastIndexOf(2));
+let testArray1 = [1, 2, 3, 4, 5];
+console.log(testArray1.myIncludes(3));
+console.log(testArray1.myIncludes(10));
+console.log(testArray1.myIncludes(7));
